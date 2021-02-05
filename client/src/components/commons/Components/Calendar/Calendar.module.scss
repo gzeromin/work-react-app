@@ -1,0 +1,65 @@
+@import '../../../../scss/abstracts/variables';
+
+$border-color: black;
+$border-color-select: rgb(217, 217, 217);
+
+$color-mint-green: rgb(204, 255, 204);
+
+$width: 12rem;
+$height: 16rem;
+$height-simple: 4rem;
+
+.calendar {
+  width: $width;
+  height: $height;
+  .header {
+    border-bottom: 1px solid $border-color;
+    text-align: center;
+    .year {
+      background-color: $color-mint-green;
+      color: blue;
+      padding-left: 3rem;
+      height: calc( #{$height} * .25 );
+      font-size: 2rem;
+      width: 100%;
+      border: none;
+    }
+  }
+  .panel {
+    .table {
+      width: 100%;
+      height: calc( #{$height} * .75 );
+      text-align: center;
+      .tr {
+        height: calc( (#{$height} * .75) / 4 );
+        .td {
+          width: calc( #{$width} * 3 );
+          cursor: pointer;
+        }
+        .selected {
+          background-color: $color-mint-green;
+          color: blue;
+          border-bottom: 1px solid black;
+        }
+      }
+    }
+  }
+}
+
+.simple {
+  width: $width;
+  height: $height-simple;
+  border: 1px solid $border-color-select;
+  .header {
+    text-align: center;
+    .year {
+      background-color: $color-mint-green;
+      color: blue;
+      padding-left: 3rem;
+      height: calc( #{$height} * .25 );
+      font-size: 2rem;
+      width: 100%;
+      border: none;
+    }
+  }
+}

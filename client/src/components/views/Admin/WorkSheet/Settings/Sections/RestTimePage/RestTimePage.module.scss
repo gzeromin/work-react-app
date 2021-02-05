@@ -1,0 +1,37 @@
+
+.time-table {
+  background-color: rgb(255,255,204);
+  .tr {
+    .th {
+      border: 1px solid blue;
+      padding: .3rem .7rem;
+      min-width: 12rem;
+      color: red;
+      font-weight: bold;
+      background-color: rgb(204,255,204);
+      &:first-child {
+        color: blue;
+        background-color: rgb(255,255,204);
+      }
+    }
+    .td {
+      border: 1px solid blue;
+      text-align: center;
+      color: red;
+      font-weight: bold;
+      background-color: rgb(204,255,204);
+      &:first-child {
+        text-align: end;
+        color: blue;
+        font-weight: 300;
+        background-color: rgb(255,255,204);
+      }
+      &:nth-child(2) {
+        border-right: 1px dotted blue;
+      }
+      &:last-child {
+        border-left: 1px dotted blue;
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/extends';
+
+.wrapper {
+  height: $body-height;
+  width: 100%;
+  overflow: auto;
+}
+
+.header {
+  margin: 3rem 1rem;
+  .search {
+    width: 30rem;
+  }
+}
+
+.list {
+  height: calc(#{$body-height} * .70);
+  table {
+    margin: 1rem;
+
+    thead {
+      tr {
+        background-color: #eaeded3b;
+        th {
+          padding: 1.5rem;
+          border: 1px solid $color-border;
+        }
+        th:first-child {
+          padding: 1rem 2rem;
+        }
+        th:nth-child(4) {
+          padding: 1rem 2rem;
+        }
+      }
+    }
+    
+    tbody {
+      tr {
+        td {
+          padding: 1rem;
+          border: 1px solid $color-border;
+        }
+        td:first-child {
+          //No
+          text-align: center;
+        }
+        td:nth-child(3) {
+          @extend %link;
+        }
+        td:nth-child(4) {
+          //Name
+          text-align: center;
+        }
+        td:nth-child(6) {
+          //Email
+          text-align: center;
+        }
+        td:last-child {
+          //Role
+          text-align: center;
+        }
+        &:nth-child(even) {
+          background-color: #eaededad;
+        }
+      }
+    }
+  }
+}
+
+.pageNav {
+  display: flex;
+  margin: 2rem 1rem;
+  text-align: center;
+  li {
+    width: 3.2rem;
+    min-width: 3.2rem;
+    height: 3.2rem;
+    line-height: 2.8rem;
+    color: rgba(0, 0, 0, 0.85);
+    border-radius: .2rem;
+    margin-right: .8rem;
+    text-align: center;
+    text-size-adjust: 100%;
+    border: 1px solid rgb(217, 217, 217);
+    &:hover {
+      cursor: pointer;
+      color: #1890ff;
+      border: 1px solid #1890ff;
+
+      transition-duration: .3s;
+      transition-property: all;
+      transition-timing-function: ease;
+      vertical-align: middle;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+  }
+  .currentPage {
+    color: #1890ff;
+    border: 1px solid #1890ff;
+  }
+}

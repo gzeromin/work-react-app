@@ -1,0 +1,20 @@
+@import "./mixins";
+
+$nav-height: 8vh;
+
+$footer-height: 4vh;
+$body-height: calc(100vh - #{$nav-height} - #{$footer-height});
+$subNavi-max-width: 24rem;
+$subNavi-width: 20vw;
+$subNavi-min-width: 20rem;
+
+$color-primary: #095392;
+$color-secondary: #FF8C00;
+$color-black700: #616161;
+$color-footer: #f5f5f7;
+$color-border: #EAEDED;
+$color-input-border: rgb(217, 217, 217);
+$color-hover: rgb(64, 169, 255);
+
+$color-font:  rgb(33, 37, 41);
+$color-footer-font: #dfdddd;

@@ -1,0 +1,32 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/extends";
+
+@import "base/base";
+@import "base/utilities";
+
+// @import "layout/center";
+
+.views {
+  position: relative;
+  height: $body-height;
+  &-sub {
+    @include mq-w('large') {
+      margin-left: $subNavi-max-width;
+    }
+    @include mq-w('middle') {
+      margin-left: $subNavi-width;
+    }
+    @include mq-w('small') {
+      margin-left: $subNavi-min-width;
+    }
+  }
+}
+.overflow-y {
+  height: $body-height;
+  overflow: auto;
+}
+
+.loading {
+  top: 20vh !important;
+}

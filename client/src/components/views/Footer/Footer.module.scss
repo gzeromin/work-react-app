@@ -1,0 +1,30 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/extends';
+
+.my-footer {
+  width: 100vw;
+  height: $footer-height;
+  line-height: $footer-height;
+  color:$color-footer-font;
+  padding: .1rem 3rem .1rem 3rem;
+  box-shadow: 0 0 0 0.05rem rgba(0,0,0,.2);
+  background-color: $color-footer;
+
+  @extend %clearfix;
+
+  &-text {
+    float: left;
+    width: 25%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $color-secondary;
+  }
+
+  &-copyright {
+    float: left;
+    width: 75%;
+    font-size: 1.2rem;
+    text-align: center;
+    color: $color-primary;
+  }
+}

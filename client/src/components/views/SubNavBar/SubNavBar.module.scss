@@ -1,0 +1,20 @@
+@import '../../../scss/abstracts/variables';
+
+.subNavBar {
+  position: fixed;
+  height: calc(100vh - #{ $nav-height } - #{ $footer-height});
+  @include mq-w('large') {
+    width: $subNavi-max-width;
+  }
+  @include mq-w('middle') {
+    width: $subNavi-width;
+  }
+  @include mq-w('small') {
+    width: $subNavi-min-width;
+  }
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  border-right: .01rem solid rgba(0,0,0,.07);
+}

@@ -1,0 +1,26 @@
+@import '../../../scss/abstracts/variables';
+
+.nav {
+  height: $nav-height;
+  padding: calc(#{$nav-height} * .2);
+  box-shadow: 0 .05rem 0 0 rgba(0,0,0,.1);
+  display: flex;
+  * {
+    margin: 0 1.5rem;
+  }
+  &-logo {
+    flex: 10rem;
+    height: calc(#{$nav-height} * .6);
+  }
+  &-user {
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+    &-logout {
+      margin: calc(#{$nav-height} * .1) 0;
+    }
+    &-name {
+      line-height: calc(#{$nav-height} * .6);
+    }
+  }
+}

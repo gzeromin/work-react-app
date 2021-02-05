@@ -1,0 +1,22 @@
+.wrapper {
+  border-collapse: collapse;
+  width: 100%;
+}
+.header {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  background-color: rgba(211, 211, 211, 0.15);
+  cursor: pointer;
+  &-closed {
+    border-radius: .4rem;
+  }
+  &-open {
+    border-radius: .4rem .4rem 0 0;
+  }
+}
+.contents {
+  border: 1px solid lightgray;
+  margin-top: -1px;
+  border-radius: 0 0 .4rem .4rem;
+  padding: 1rem;
+}

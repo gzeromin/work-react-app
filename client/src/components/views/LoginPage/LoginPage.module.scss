@@ -1,0 +1,24 @@
+// .login {
+//   width: 35rem;
+//   margin: 35vh auto;
+//   &-input {
+//     float: right;
+//     width: 20rem;
+//   }
+//   &-button {
+//     margin: .5rem;
+//     float: right;
+//   }
+// }
+
+
+.login {
+  width: 35rem;
+  margin: 35vh auto;
+  &-input {
+    width: 100%;
+  }
+  &-button {
+    line-height: 3rem;
+  }
+}

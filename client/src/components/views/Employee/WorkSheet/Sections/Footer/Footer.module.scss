@@ -1,0 +1,29 @@
+.footer {
+  margin-left: 2rem;
+  margin-top: .2rem;
+  width: 79.1rem;
+  display: flex;
+  border: 1px solid black;
+  font-size: 1.2rem;
+  &-title {
+    min-width: 3rem;
+    border-right: 1px solid black;
+
+    text-align: center;
+    background-color: aqua;
+  }
+  &-item {
+    display: flex;
+    &-section {
+      text-align: center;
+      min-width: 3rem;
+    }
+    &-text {
+      padding-left: .1rem;
+    }
+    .hightlight {
+      color: blue;
+      font-weight: 600;
+    }
+  }
+}

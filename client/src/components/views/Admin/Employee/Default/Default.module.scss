@@ -1,0 +1,32 @@
+@import '../../../../../scss/abstracts/variables';
+
+.wrapper {
+  width: 45rem;
+  margin: 2rem;
+  height: $body-height;
+}
+
+.title {
+  text-align: center;
+}
+
+.form {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  .label {
+    text-align: end;
+  }
+  input, select {
+    padding: .4rem 1.1rem;
+    width: 85%;
+    border: 1px solid $color-input-border;
+    border-radius: 2px;
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    &:hover {
+      border: 1px solid $color-hover;
+    }
+  }
+}

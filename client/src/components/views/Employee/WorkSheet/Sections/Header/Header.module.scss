@@ -1,0 +1,118 @@
+.wrapper {
+  display: flex;
+}
+
+.calendar {
+  margin: .5rem;
+}
+
+.info {
+  padding: .5rem;
+  &-top {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: red;
+    font-style: italic;
+    tr {
+      td {
+        min-width: 6rem;
+        border: 1px dotted black;
+        background-color: rgb(204,255,255);
+        padding: .1rem .3rem;
+      }
+    }
+  }
+  &-body {
+    display: flex;
+    margin-top: 1rem;
+    &-left {
+      margin-top: 1rem;
+      margin-left: 1rem;
+      &-title {
+        width: 16rem;
+        font-size: 3rem;
+        font-weight: 500;
+        border-bottom: 3px double black;
+        text-align: center;
+        line-height: 2.7rem;
+      }
+      &-employee {
+        margin-left: .1rem;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+        tr {
+          td {
+            text-align: end;
+            padding: .2rem .1rem;
+            &:last-child {
+              text-align: start;
+              font-weight: 500;
+              width: 9rem;
+              color: blue;
+              background-color: rgb(204, 255, 204);
+              border-bottom: 1px solid black;
+            }
+          }
+        }
+      }
+    }
+
+    &-middle {
+      margin-left: 1rem;
+      &-top {
+        margin-left: 12rem;
+        tr {
+          td {
+            height: 6rem;
+            text-align: center;
+            &:hover {
+              transition-duration: .3s;
+              transition-property: all;
+              transition-timing-function: ease;
+              vertical-align: middle;
+              -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+          }
+        }
+  
+        &-btn {
+          width: 95%;
+          height: 5rem;
+          margin: auto;
+          .icon {
+            vertical-align: baseline;
+            margin: .1rem;
+          }
+        }
+      }
+
+      &-bottom {
+        border-collapse: collapse;
+        text-align: center;
+        tr {
+          th {
+            padding: .1rem;
+            border: 1px solid black;
+            font-weight: 400;
+          }
+          td {
+            border: 1px solid black;
+            height: 3.5rem;
+          }
+        }
+      }
+    }
+
+    &-right {
+      margin-top: 1rem;
+      margin-left: 2.5rem;
+      &-item {
+        display: block;
+        width: 9rem;
+        margin-top: .2rem;
+      }
+    }
+  }
+
+}

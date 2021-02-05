@@ -1,0 +1,325 @@
+$color-holiday : rgb(255, 204, 0);
+$color-grey: rgb(192, 192, 192);
+$color-light-yellow: rgb(255, 255, 204);
+
+@mixin borderStyle($left, $top, $right, $bottom) {
+  @if ($left == double) {
+    border-left: 3px $left black;
+  } @else {
+    border-left: 1px $left black;
+  }
+
+  @if ($top == double) {
+    border-top: 3px $top black;
+  } @else {
+    border-top: 1px $top black;
+  }
+
+  @if ($right == double) {
+    border-right: 3px $right black;
+  } @else {
+    border-right: 1px $right black;
+  }
+
+  @if ($bottom == double) {
+    border-bottom: 3px $bottom black;
+  } @else {
+    border-bottom: 1px $bottom black;
+  }
+}
+.workSheet {
+  border-right: solid 1px black;
+  margin-left: 2rem;
+  width: 70rem;
+  thead {
+    tr:last-child {
+      background-color: $color-grey;
+      th {
+        text-align: center;
+        &:nth-child(1) {
+          // 日
+          border-top: 1px solid black;
+          @include borderStyle(solid, solid, dotted, double);
+          min-width: 3rem;
+        }
+        &:nth-child(2) {
+          // 曜日
+          min-width: 3rem;
+          @include borderStyle(dotted, solid, solid, double);
+          
+        }
+        &:nth-child(3) {
+          // 出勤時間
+          min-width: 5rem;
+          @include borderStyle(solid, solid, dotted, double);
+          
+        }
+        &:nth-child(4) {
+          // 退勤時間
+          min-width: 5rem;
+          @include borderStyle(dotted, solid, solid, double);
+          
+        }
+        &:nth-child(5) {
+          // 休み時間
+          min-width: 6rem;
+          @include borderStyle(solid, solid, solid, double);
+          
+        }
+        &:nth-child(6) {
+          // 勤務時間
+          min-width: 6rem;
+          @include borderStyle(solid, solid, double, double);
+          
+        }
+        &:nth-child(7) {
+          // 遅刻
+          min-width: 3rem;
+          @include borderStyle(double, solid, solid, double);
+          
+        }
+        &:nth-child(8) {
+          // 年次
+          min-width: 3rem;
+          @include borderStyle(solid, solid, dotted, double);
+          
+        }
+        &:nth-child(9) {
+          // 半休
+          min-width: 3rem;
+          @include borderStyle(dotted, solid, dotted, double);
+          
+        }
+        &:nth-child(10) {
+          // 其休
+          min-width: 3rem;
+          @include borderStyle(dotted, solid, solid, double);
+          
+        }
+        &:nth-child(11) {
+          // 休出
+          min-width: 3rem;
+          @include borderStyle(solid, solid, double, double);
+          
+        }
+        &:nth-child(12) {
+          // 備考(産業内容)
+          min-width: 22rem;
+          text-align: start;
+          @include borderStyle(solid, solid, solid, double);
+          
+        }
+        &:nth-child(13) {
+          // 
+          min-width: 1rem;
+          background-color: white;
+          
+        }
+        &:nth-child(14) {
+          // 休み時間(自動計算)
+          min-width: 5rem;
+          width: 6rem;
+          @include borderStyle(solid, solid, solid, double);
+          
+        }
+        &:nth-child(15) {
+          // 残業時間
+          min-width: 5rem;
+          @include borderStyle(solid, solid, solid, double);
+          
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      .holiday {
+        background-color: $color-holiday;
+        color: red;
+        font-weight: 600;
+        font-style: italic;
+        text-decoration: underline;
+      }
+      td {
+        text-align: center;
+        &:nth-child(1) {
+          // 日
+          border-top: 1px solid black;
+          @include borderStyle(solid, dotted, dotted, dotted);
+        }
+        &:nth-child(2) {
+          // 曜日
+          @include borderStyle(dotted, dotted, solid, dotted);
+          
+        }
+        &:nth-child(3) {
+          // 出勤時間
+          @include borderStyle(solid, dotted, dotted, dotted);
+          
+        }
+        &:nth-child(4) {
+          // 退勤時間
+          @include borderStyle(dotted, dotted, solid, dotted);
+          
+        }
+        &:nth-child(5) {
+          // 休み時間
+          @include borderStyle(solid, dotted, solid, dotted);
+          
+        }
+        &:nth-child(6) {
+          // 勤務時間
+          background-color: $color-grey;
+          @include borderStyle(solid, dotted, double, dotted);
+          
+        }
+        &:nth-child(7) {
+          // 遅刻
+          @include borderStyle(dotted, dotted, solid, dotted);
+          
+        }
+        &:nth-child(8) {
+          // 年次
+          @include borderStyle(solid, dotted, dotted, dotted);
+          
+        }
+        &:nth-child(9) {
+          // 半休
+          @include borderStyle(dotted, dotted, dotted, dotted);
+          
+        }
+        &:nth-child(10) {
+          // 其休
+          @include borderStyle(dotted, dotted, solid, dotted);
+          
+        }
+        &:nth-child(11) {
+          // 休出
+          @include borderStyle(solid, dotted, double, dotted);
+          
+        }
+        &:nth-child(12) {
+          // 備考(産業内容)
+          text-align: start;
+          @include borderStyle(dotted, dotted, solid, dotted);
+          color: blue;
+        }
+        &:nth-child(13) {
+          // 
+          background-color: white;
+          
+        }
+        &:nth-child(14) {
+          // 休み時間(自動計算)
+          @include borderStyle(solid, dotted, solid, dotted);
+          
+        }
+        &:nth-child(15) {
+          // 残業時間
+          @include borderStyle(solid, dotted, solid, dotted);
+          
+        }
+        input, select {
+          background-color: transparent;
+          width: 100%;
+          border: none;
+          text-align: center;
+        }
+
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          text-indent: 1px;
+          text-overflow: '';
+        }
+
+        input[type=text] {
+          text-align: start;
+        }
+      }
+      &:last-child {
+        td {
+          text-align: center;
+          &:nth-child(1) {
+            // 日
+            border-top: 1px solid black;
+            @include borderStyle(solid, solid, none, solid);
+            background-color: $color-grey;
+          }
+          &:nth-child(2) {
+            // 曜日
+            @include borderStyle(none, solid, none, solid);
+            background-color: $color-grey;
+          }
+          &:nth-child(3) {
+            // 出勤時間
+            @include borderStyle(none, solid, none, solid);
+            background-color: $color-grey;
+          }
+          &:nth-child(4) {
+            // 退勤時間
+            @include borderStyle(none, solid, solid, solid);
+            background-color: $color-grey;
+          }
+          &:nth-child(5) {
+            // 休み時間
+            @include borderStyle(solid, solid, solid, solid);
+            background-color: $color-grey;
+          }
+          &:nth-child(6) {
+            // 勤務時間
+            background-color: $color-grey;
+            @include borderStyle(solid, solid, double, solid);
+            background-color: $color-grey;
+          }
+          &:nth-child(7) {
+            // 遅刻
+            @include borderStyle(dotted, double, solid, double);
+            background-color: $color-grey;
+          }
+          &:nth-child(8) {
+            // 年次
+            @include borderStyle(solid, double, dotted, double);
+            background-color: $color-grey;
+          }
+          &:nth-child(9) {
+            // 半休
+            @include borderStyle(dotted, double, dotted, double);
+            background-color: $color-grey;
+          }
+          &:nth-child(10) {
+            // 其休
+            @include borderStyle(dotted, double, solid, double);
+            background-color: $color-grey;
+          }
+          &:nth-child(11) {
+            // 休出
+            @include borderStyle(solid, double, double, double);
+            background-color: $color-grey;
+          }
+          &:nth-child(12) {
+            // 備考(産業内容)
+            text-align: start;
+            @include borderStyle(solid, solid, solid, solid);
+            
+          }
+          &:nth-child(13) {
+            // 
+            background-color: white;
+            
+          }
+          &:nth-child(14) {
+            // 休み時間(自動計算)
+            @include borderStyle(solid, solid, solid, solid);
+            
+          }
+          &:nth-child(15) {
+            // 残業時間
+            @include borderStyle(solid, solid, solid, solid);
+            
+          }
+        }
+      }
+    }
+  }
+}
