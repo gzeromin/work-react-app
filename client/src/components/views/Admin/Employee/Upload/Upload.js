@@ -34,6 +34,7 @@ function Upload(props) {
       if(res.data.success) {
         setTableData(res.data.uploadData);
       } else {
+        console.log(res.data.err)
         alert(res.data.err);
       }
     });

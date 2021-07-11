@@ -6,6 +6,10 @@ import { setIsLoading } from '../../../_actions/common_action';
 import { withRouter } from 'react-router-dom';
 import { Row, Col, Button } from 'antd';
 import style from './LoginPage.module.scss';
+import axios from 'axios';
+import {
+  Modal
+} from 'antd';
 
 function LoginPage(props) {
   const dispatch = useDispatch();
@@ -24,22 +28,47 @@ function LoginPage(props) {
   const onSubmitHandler = async (event) => {
     event.preventDefault(); // prevent page refresh
     dispatch(setIsLoading(true));
-    let body = {
-      email: Email,
-      password: Password
-    }
-
-    dispatch(loginUser(body))
+    if(Email === 'create@new.email') {
+      const values = {
+        employeeNo: 0,
+        name: 'aaa',
+        hurigana: 'aaa',
+        email: 'aaa@aaa.aaa',
+        role: 2
+      };
+      axios.post('/api/user/create', values)
       .then(res => {
         dispatch(setIsLoading(false));
-
-        if(res.payload.success) {
-          window.localStorage.setItem('userId', res.payload.data._id);
-          props.history.push('/');
+        if(res.data.success) {
+          Modal.success({
+            content: 'email: aaa@aaa.aaa, pw: aaa',
+          });
         } else {
-          alert(res.payload.message);
+          console.log(res.data.err);
+          Modal.error({
+            title: '登録失敗',
+            content: '管理者に問い合わせしてください。',
+          });
         }
       });
+    } else  {
+      let body = {
+        email: Email,
+        password: Password
+      }
+  
+      dispatch(loginUser(body))
+        .then(res => {
+          dispatch(setIsLoading(false));
+  
+          if(res.payload.success) {
+            window.localStorage.setItem('userId', res.payload.data._id);
+            props.history.push('/');
+          } else {
+            alert(res.payload.message);
+          }
+        });
+    }
   }
 
   return (
@@ -94,6 +123,7 @@ function LoginPage(props) {
         </Col>
       </Row>
       <br/>
+      create account cheat key: create@new.account
       <br />
     </form>
   )
